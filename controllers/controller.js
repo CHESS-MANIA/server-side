@@ -23,7 +23,7 @@ class Controller {
 
   static async login(req, res) {
     try {
-        console.log("masuk login");
+        // console.log("masuk login");
       const { userName, password } = req.body;
       if (!userName) {
         throw { code: 400, message: "Username is required" };
@@ -43,7 +43,7 @@ class Controller {
 
       const access_token = signToken({ id: findUser.id });
 
-      res.status(200).json({ access_token });
+      res.status(200).json({ access_token, userName });
     } catch (error) {
       console.log(error);
       if (error.hasOwnProperty("code")) {
