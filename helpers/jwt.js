@@ -6,11 +6,11 @@ const SECRET = process.env.SECRET
 // console.log(SECRET,">>");
 
 const signToken = (payload) => {
-    return jwt.sign(payload, 'coba')
+    return jwt.sign(payload, SECRET)
 }
 
 const verifyToken = (token) => {
-    return jwt.verify(token, 'coba')
+    return jwt.verify(token, SECRET)
 }
 
 module.exports= {
